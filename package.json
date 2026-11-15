@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-ca-recalls",
+  "version": "0.1.0",
+  "description": "ca-recalls -- the Government of Canada's Recalls and Safety Alerts: consumer product, food, health product and vehicle recalls and safety alerts issued by Health Canada, the Canadian Food Inspection Agency and Transport Canada.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-ca-recalls": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ca-recalls"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-ca-recalls.git"
+  },
+  "mcpName": "io.github.pipeworx-io/ca-recalls",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "ca-recalls",
+    "gatewaySlug": "ca-recalls",
+    "sourceHash": "v1-a39c2aad628eaa5e4b63f0df74b6f74efc6656bc8c8bca6833ae3b390f2712a2",
+    "sourceCommit": "70ce179fd25e8e9e5243aa591a1ba635b2b3c809"
+  }
+}

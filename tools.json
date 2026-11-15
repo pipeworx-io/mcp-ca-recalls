@@ -1,0 +1,63 @@
+[
+  {
+    "name": "ca_recalls_search",
+    "description": "Search Canadian federal recalls and safety alerts (Government of Canada: Health Canada, Canadian Food Inspection Agency, Transport Canada): consumer product, food, health product and vehicle notices. Keyword in English or French (lang), optional publication date range. With no keyword it lists the newest notices. One 15-row page per call (publisher's relevance order); date filters apply to the fetched page. Returns id, title, notice type and date; pass an id to ca_recall_get for the notice.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Keyword in English or French, e.g. \"power bank\", \"peanut\", \"batterie externe\", \"Toyota\"."
+        },
+        "lang": {
+          "type": "string",
+          "enum": [
+            "en",
+            "fr"
+          ],
+          "description": "Search and result language. Default en."
+        },
+        "date_from": {
+          "type": "string",
+          "description": "Earliest publication date, YYYY-MM-DD (applied to the fetched page)."
+        },
+        "date_to": {
+          "type": "string",
+          "description": "Latest publication date, YYYY-MM-DD (applied to the fetched page)."
+        },
+        "limit": {
+          "type": "number",
+          "description": "1-15, default 15."
+        },
+        "page": {
+          "type": "number",
+          "description": "Page of the publisher results, 1-based, 15 rows each."
+        }
+      }
+    }
+  },
+  {
+    "name": "ca_recall_get",
+    "description": "One Canadian recall or safety alert notice in full: product, brand, category, the issue and hazard as stated, affected models and descriptions, what to do, number sold in Canada, period sold, place of origin, importer and manufacturer (companies), recall number and issuing authority. Takes the id from ca_recalls_search or a recall number like RA-82889. Company phone and email are not returned. Returns found:false for an unknown id.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Notice id from ca_recalls_search, e.g. alert-recall/newdery-power-banks-recalled-due-fire-hazard, or a recall number such as RA-82889."
+        },
+        "lang": {
+          "type": "string",
+          "enum": [
+            "en",
+            "fr"
+          ],
+          "description": "Language for a recall-number lookup. Default en."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+]

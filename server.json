@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/ca-recalls",
+  "title": "Ca Recalls",
+  "description": "ca-recalls -- the Government of Canada's Recalls and Safety Alerts: consumer product, food, health…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/ca-recalls",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-ca-recalls",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/ca-recalls/mcp"
+    }
+  ]
+}
